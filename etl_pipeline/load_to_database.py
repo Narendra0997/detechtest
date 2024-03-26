@@ -32,3 +32,9 @@ CREATE TABLE Users (
 
 cursor.execute(create_table_posts)
 cursor.execute(create_table_users)
+
+table_name = dbo.posts
+df_posts.to_sql(name=table_name, con=conn, if_exists='append', index=False, dtype=dtype_mapping)
+
+table_name = dbo.users
+df_userss.to_sql(name=table_name, con=engine, if_exists='append', index=False, dtype=dtype_mapping)
